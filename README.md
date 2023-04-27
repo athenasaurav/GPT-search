@@ -15,3 +15,7 @@ Export your API Key on your instance
 ```
 export OPENAI_API_KEY=your_api_key
 ```
+RUN the app from root folder 
+```
+python app.py
+```
