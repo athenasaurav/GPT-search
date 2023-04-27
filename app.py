@@ -109,4 +109,4 @@ def urlize(text):
 app.jinja_env.filters['urlize'] = urlize
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host = '0.0.0.0')
