@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Training Done</title>
+</head>
+<body>
+    <h1>Congratulations!</h1>
+    <p>Your model has been successfully trained.</p>
+    
+    <!-- <h2>Search</h2>
+    <form method="POST" action="{{ url_for('success') }}" class="search-form">
+        <label for="sample_name">Select a Sample:</label>
+        <select name="sample_name" id="sample_name">
+            {% for name in sample_names %}
+                <option value="{{ name }}">{{ name }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="query" placeholder="Enter search query" required autocomplete="off">
+        <button type="submit" class="button">Search</button>
+    </form> -->
+    <div class="search-container">
+        <h2>Search</h2>
+        <form method="POST" action="{{ url_for('success') }}" class="search-form">
+            <label for="index_name">Select an Index:</label>
+            <select name="index_name" id="index_name">
+                {% for name in sample_names %}
+                    <option value="{{ name }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+            <label for="type">Select Type:</label>
+            <select name="type" id="type">
+                <option value="text">Text</option>
+                <option value="images">Images</option>
+            </select>
+            <input type="text" name="query" placeholder="Enter search query" required autocomplete="off">
+            <button type="submit" class="button">Search</button>
+        </form>
+    </div>
+    
+    <!-- {% if search_results %}
+    <h2>Search Results</h2>
+    <ul class="search-results">
+        {% for result in search_results %}
+        <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %} -->
+
+
+    {% if search_results %}
+    <h2>Search Results</h2>
+    <ul class="search-results">
+        {% for result in search_results %}
+        
+        <li>
+            <div class="result-content">{{ result|urlize|safe }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+    <script>
+        document.querySelector('.search-form').addEventListener('submit', function() {
+            document.getElementById('search-waiting-message').style.display = 'block';
+        });
+    </script>
+</script>
+</body>
+</html>

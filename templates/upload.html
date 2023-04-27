@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Upload PDF</title>
+</head>
+<body>
+    <h1>Upload a PDF document</h1>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload_file') }}" class="upload-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="folder_name">Folder Name:</label>
+                <input type="text" name="folder_name" id="folder_name" required autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="file">PDF File:</label>
+                <input type="file" name="file" id="file" required>
+            </div>
+        </div>
+        <button type="submit" class="button">Upload</button>
+    </form>
+    <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+</body>
+</html>

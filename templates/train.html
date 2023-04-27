@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Train</title>
+</head>
+<body>
+    <h1>Train the Model</h1>
+    <form method="POST" action="{{ url_for('train') }}" class="training-form">
+        <div class="form-content">
+            <label for="input_text">Enter training input:</label>
+            <input type="text" name="input_text" id="input_text" required autocomplete="off" required>
+            <br><br>
+            <p id="waiting-message" style="display: none;">Please Wait while we Retrain the Model...</p>
+            <button type="submit" class="button">Start Training</button>
+            
+        </div>
+        
+    </form>
+    <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+<script>
+        document.querySelector('.training-form').addEventListener('submit', function() {
+            document.getElementById('waiting-message').style.display = 'block';
+        });
+</script>
+    
+</body>
+</html>
