@@ -8,7 +8,7 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.llms import OpenAI
 from langchain.chains.question_answering import load_qa_chain
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = 'your-api-key'
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 app = Flask(__name__)
 
