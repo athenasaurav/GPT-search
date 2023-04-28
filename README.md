@@ -43,3 +43,35 @@ To keep running in background run the following command
 docker run -d -p 5010:5010 -e my_app # Make sure to replace the name of the app to your name choosen earlier. Remember i have choosen 5010 (make sure you have this open)
 ```
 
+To view docker app, Run :
+```
+docker ps
+```
+It will show the docker container running
+
+To stop the container, Run:
+```
+docker stop <container_id>
+```
+
+To view the logs of the Docker Container, Run:
+```
+docker logs <container_id>
+```
+
+To view the files inside a running Docker container, you can use the docker exec command to start a shell session within the container. Run:
+```
+docker exec -it <container_id> bash
+```
+Make sure bash is installed
+
+To exit a running Docker container, simply press Ctrl + D or type exit and press Enter. This will terminate the current shell session within the container and return you to your host system's command prompt.
+
+To run nano to view any file content like app.py, install nano first in the Docker container, RUN:
+```
+docker exec -it <container_id> /bin/bash -c "apt-get update && apt-get install -y nano"
+```
+Then run,
+```
+docker exec -it <container_id> nano <file_path>
+```
