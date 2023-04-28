@@ -26,3 +26,20 @@ To install Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
+Now we have Docker installed, we are ready to build and depoy the app.
+
+Build Docker APP:
+```
+docker build -t my_app .  #Replace my_app with any app name you want
+```
+
+Now to deploy the app on <ip>:<port>, use the following command:
+```
+docker run -p 5010:5010 my_app  # Make sure to replace the name of the app to your name choosen earlier. Remember i have choosen 5010 (make sure you have this open)
+```
+
+To keep running in background run the following command
+```
+docker run -d -p 5010:5010 -e my_app # Make sure to replace the name of the app to your name choosen earlier. Remember i have choosen 5010 (make sure you have this open)
+```
+
