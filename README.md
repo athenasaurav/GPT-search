@@ -19,6 +19,6 @@ RUN the app from root folder
 ```
 python app.py
 ```
-#To Run this program using Docker, Run the following steps (make sure Dcoker is installed)
+*To Run this program using Docker, Run the following steps (make sure Dcoker is installed)
 
 To install Docker
